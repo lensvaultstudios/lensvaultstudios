@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   const teamMembers = [
@@ -42,19 +43,36 @@ const About = () => {
   return (
     <div>
       <section
-        className="w-full min-h-screen bg-[#0f0d15] pt-40 relative"
+        className="w-full min-h-screen bg-[#0f0d15] pt-40 px-6 md:px-16"
         style={{
           background: "radial-gradient(circle at top, #5598a6 0%, black 70%)",
         }}
       >
-        <h1 className="font-custom1 lg:text-7xl md:text-7xl text-4xl text-center text-white">
+        {/* Centered Heading */}
+        <h1 className="font-custom1 text-white text-4xl md:text-6xl lg:text-7xl text-center mb-12">
           ABOUT US
         </h1>
-        <p className="text-white text-xl md:text-2xl lg:text-2xl xl:text-2xl text-center mx-16 md:mx-40 lg:mx-64 pt-20">
-          Lens Vault Studios pushes the boundaries of traditional storytelling,
-          creating memorable and impactful experiences across multiple
-          platforms.
-        </p>
+
+        {/* Content */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          {/* Text Section */}
+          <div className="w-full md:w-1/2 text-white text-center md:text-left">
+            <p className="text-xl md:text-2xl leading-relaxed">
+              Lens Vault Studios pushes the boundaries of traditional
+              storytelling, creating memorable and impactful experiences across
+              multiple platforms.
+            </p>
+          </div>
+
+          {/* Image Section */}
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+            <img
+              src="/1.png"
+              alt="Lens Vault Studios"
+              className="h-[300px] md:h-[400px] lg:h-[400px] w-auto object-cover "
+            />
+          </div>
+        </div>
       </section>
 
       <section
@@ -70,11 +88,26 @@ const About = () => {
 
         <div className="mt-10 max-w-5xl mx-auto space-y-10 md:space-y-14 px-6 md:px-0 pb-20">
           {teamMembers.map((member, index) => (
-            <div
+            <motion.div
               key={member.name}
               className={`flex flex-col md:flex-row items-center md:items-stretch gap-6 ${
                 index % 2 !== 0 ? "md:flex-row-reverse" : ""
               }`}
+              initial={{
+                x: index % 2 === 0 ? -200 : 200, // Start position based on side
+                opacity: 0,
+              }}
+              whileInView={{
+                x: 0, // Move to center when in view
+                opacity: 1,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 50,
+                damping: 25,
+                duration: 1.5, // Duration of the animation
+              }}
+              viewport={{ once: true }}
             >
               {/* Image Section */}
               <div
@@ -101,7 +134,7 @@ const About = () => {
                   {member.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

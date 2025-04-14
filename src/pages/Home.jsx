@@ -41,12 +41,25 @@ const Home = () => {
           OPENING THE VAULT
         </h1>
 
-        {/* Centered Image with Less Spacing */}
+        {/* Centered Image with Scroll Triggered Animation */}
         <div className="flex justify-center items-center pt-10 mt-6 mb-6">
-          <img
+          <motion.img
             src="/home.png"
             alt="Centered Image"
             className="w-180 h-auto"
+            initial={{ scale: 0.6, opacity: 0 }}
+            whileInView={{
+              scale: 1,
+              opacity: 1,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 100, // Slower movement
+              damping: 25, // Slower damping for a more gradual effect
+              duration: 2, // Make it slower
+              delay: 0.3, // Delay a bit before animation starts
+            }}
+            viewport={{ once: true }} // This ensures it triggers once when it comes into view
           />
         </div>
 
