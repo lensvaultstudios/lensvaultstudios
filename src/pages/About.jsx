@@ -43,40 +43,47 @@ const About = () => {
   return (
     <div>
       <section
-        className="w-full min-h-screen bg-[#0f0d15] pt-40 px-6 md:px-16"
+        className="w-full min-h-screen bg-[#0f0d15] pt-40 px-0 md:px-16"
         style={{
           background: "radial-gradient(circle at top, #5598a6 0%, black 70%)",
         }}
       >
-        {/* Centered Heading */}
+       
         <h1 className="font-custom1 text-white text-4xl md:text-6xl lg:text-7xl text-center mb-12">
           ABOUT US
         </h1>
 
-        {/* Content */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          {/* Text Section */}
-          <div className="w-full md:w-1/2 text-white text-center md:text-left">
-            <p className="text-xl md:text-2xl leading-relaxed">
+        
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+          
+          <div className="w-full md:w-[55%] font-custom2 text-white text-center md:text-left md:pl-6 px-6">
+            <p className="text-lg md:text-xl leading-relaxed text-justify">
               Lens Vault Studios pushes the boundaries of traditional
               storytelling, creating memorable and impactful experiences across
-              multiple platforms.
+              multiple platforms. At the heart of our work lies a powerful blend
+              of creativity and cutting-edge technology. From conceptualization
+              to execution, we push the boundaries of traditional storytelling
+              to deliver content that captivates, inspires, and leaves a lasting
+              impression—across every platform and screen. <br />
+              Whether you're building a brand, launching a campaign, or telling
+              your story, Lens Vault Studios is your creative partner in shaping
+              content that truly resonates.
             </p>
           </div>
 
-          {/* Image Section */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+          
+          <div className="w-full md:w-[40%] flex justify-center md:justify-end">
             <img
               src="/1.png"
               alt="Lens Vault Studios"
-              className="h-[300px] md:h-[400px] lg:h-[400px] w-auto object-cover "
+              className="h-[300px] md:h-[400px] lg:h-[400px] w-auto object-cover"
             />
           </div>
         </div>
       </section>
 
       <section
-        className="w-full min-h-screen bg-[#0f0d15] relative"
+        className="w-full min-h-screen bg-[#0f0d15] relative pt-10 md:pt-20 overflow-x-hidden"
         style={{
           background:
             "radial-gradient(circle at bottom, #5598a6 0%, black 70%)",
@@ -124,13 +131,13 @@ const About = () => {
 
               {/* Text Section */}
               <div className="w-full md:w-2/3 text-white flex flex-col justify-center text-center md:text-justify leading-relaxed md:leading-loose">
-                <h2 className="text-2xl md:text-3xl font-bold">
+                <h2 className="text-2xl md:text-3xl font-bold font-custom2">
                   {member.name}
                 </h2>
-                <h3 className="text-lg md:text-xl text-gray-300">
+                <h3 className="text-lg md:text-xl text-gray-300 font-custom2">
                   {member.designation}
                 </h3>
-                <p className="text-base md:text-lg mt-3">
+                <p className="text-base md:text-lg mt-3 font-custom2">
                   {member.description}
                 </p>
               </div>

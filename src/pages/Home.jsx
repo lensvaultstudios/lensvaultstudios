@@ -63,10 +63,11 @@ const Home = () => {
           />
         </div>
 
-        <p className="text-white text-xl md:text-2xl lg:text-2xl xl:text-2xl text-center pt-20 pb-20 mx-16 md:mx-40 lg:mx-64">
-          A dynamic content creation company blending creativity and technology
-          to craft immersive narratives that empower brands, creators, and
-          businesses, delivering impactful stories across digital platforms.
+        <p className="text-white font-custom2 text-xl md:text-2xl lg:text-2xl xl:text-2xl text-center pt-20 pb-20 mx-16 md:mx-40 lg:mx-64">
+          Lens Vault Studios is a new-age content creation company driven by a
+          passion for fresh, immersive storytelling. We specialize in crafting
+          unique and meaningful narratives that empower brands, creators, and
+          businesses to connect deeply with today’s digital audiences.
         </p>
       </section>
     </div>

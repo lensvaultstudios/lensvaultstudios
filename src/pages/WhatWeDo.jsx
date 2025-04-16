@@ -62,10 +62,10 @@ const WhatWeDo = () => {
             </div>
 
             {/* Title */}
-            <h2 className="text-2xl font-bold mt-12">{service.title}</h2>
+            <h2 className="text-2xl font-bold mt-12 font-custom2">{service.title}</h2>
 
             {/* List of Services */}
-            <ul className="mt-4 space-y-2 text-md text-white">
+            <ul className="mt-4 space-y-2 text-md text-white font-custom2">
               {service.items.map((item, i) => (
                 <li key={i}>• {item}</li>
               ))}
