@@ -21,7 +21,10 @@ const WhatWeDo = () => {
     {
       title: "Branded content",
       logo: "/brand.png",
-      items: [],
+      items: [
+        "Adventure",
+        "AV",
+      ],
     },
     {
       title: "User Generated Content",
