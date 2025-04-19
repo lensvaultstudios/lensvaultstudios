@@ -41,7 +41,7 @@ const Footer = () => {
             <FaYoutube />
           </a>
           <a
-            // href="mailto:Contact@prismixstudios.com"
+            href="mailto:business@lensvaultstudios.com"
             className="text-white text-xl hover:text-green-400 transition duration-300"
           >
             <FaEnvelope />
