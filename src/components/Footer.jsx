@@ -1,5 +1,5 @@
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram, FaYoutube, FaEnvelope } from "react-icons/fa";
+// import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaEnvelope, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
@@ -17,7 +17,7 @@ const Footer = () => {
         {/* Social Links Section */}
         <div className="flex items-center space-x-4">
           <a
-            // href="https://www.instagram.com/prismixstudios/"
+            href="https://www.instagram.com/lensvaultstudios?igsh=YzR2bmJjN2ZhMzJ6"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-xl hover:text-pink-500 transition duration-300"
@@ -25,7 +25,7 @@ const Footer = () => {
             <FaInstagram />
           </a>
           <a
-            // href="https://x.com/PrismixStudios"
+            href="https://x.com/lensvaultstudio"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-xl hover:text-blue-400 transition duration-300"
@@ -33,7 +33,7 @@ const Footer = () => {
             <FaXTwitter />
           </a>
           <a
-            // href="https://www.youtube.com/@prismixstudios"
+            href=" https://youtube.com/@lensvaultstudios?si=htcnLCrggOYtwvGj"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-xl hover:text-red-500 transition duration-300"
@@ -47,12 +47,12 @@ const Footer = () => {
             <FaEnvelope />
           </a>
           <a
-            // href="https://www.linkedin.com/company/prismixstudios/posts/?feedView=all"
+            href="https://www.facebook.com/profile.php?id=61571546740050"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white text-xl hover:text-blue-400 transition duration-300"
+            className="text-white text-xl hover:text-blue-600 transition duration-300"
           >
-            <FaLinkedin />
+            <FaFacebook />
           </a>
         </div>
       </div>

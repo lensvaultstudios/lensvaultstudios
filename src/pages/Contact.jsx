@@ -64,7 +64,7 @@ const Contact = () => {
         {/* Right Side: Form */}
         <form
           onSubmit={handleSubmit}
-          className="w-full md:w-1/2 flex flex-col space-y-4 text-white pt-10 md:pt-20 max-w-sm"
+          className="w-full md:w-1/2 flex flex-col text-center md:text-left space-y-4 text-white pt-10 md:pt-20 max-w-sm"
         >
           <label className="text-lg">Your Name</label>
           <input
@@ -72,7 +72,7 @@ const Contact = () => {
             name="from_name"
             value={formData.from_name}
             onChange={handleChange}
-            className="bg-transparent border-b border-gray-400 outline-none focus:border-white text-lg pb-1 max-w-xs md:max-w-sm"
+            className="bg-transparent border-b border-gray-400 outline-none focus:border-white text-lg pb-1 max-w-xs md:max-w-sm mx-auto md:mx-0"
             required
           />
 
@@ -82,7 +82,7 @@ const Contact = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="bg-transparent border-b border-gray-400 outline-none focus:border-white text-lg pb-1 max-w-xs md:max-w-sm"
+            className="bg-transparent border-b border-gray-400 outline-none focus:border-white text-lg pb-1 max-w-xs md:max-w-sm mx-auto md:mx-0"
             required
           />
 
@@ -91,8 +91,12 @@ const Contact = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            rows="4"
-            className="bg-transparent border-b border-gray-400 outline-none focus:border-white text-lg pb-1 max-w-xs md:max-w-sm"
+            rows="1"
+            onFocus={(e) => (e.target.rows = 4)}
+            onBlur={(e) => {
+              if (!e.target.value) e.target.rows = 1;
+            }}
+            className="transition-all duration-300 bg-transparent border-b border-gray-400 outline-none focus:border-white text-lg pb-1 max-w-xs md:max-w-sm mx-auto md:mx-0 overflow-hidden resize-none"
             required
           />
 

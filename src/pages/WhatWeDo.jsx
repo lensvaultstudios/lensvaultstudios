@@ -22,7 +22,7 @@ const WhatWeDo = () => {
       title: "Branded content",
       logo: "/brand.png",
       items: [
-        "Adventure",
+        "Advertisement",
         "AV",
       ],
     },
@@ -42,7 +42,7 @@ const WhatWeDo = () => {
         background: "radial-gradient(circle at top, #5598a6 0%, black 70%)",
       }}
     >
-      <h1 className="font-custom1 lg:text-7xl md:text-7xl text-4xl text-center text-white mb-12">
+      <h1 className="font-custom1 lg:text-6xl md:text-6xl text-2xl text-center text-white mb-12">
         WHAT WE DO
       </h1>
 
@@ -65,7 +65,9 @@ const WhatWeDo = () => {
             </div>
 
             {/* Title */}
-            <h2 className="text-2xl font-bold mt-12 font-custom2">{service.title}</h2>
+            <h2 className="text-2xl font-bold mt-12 font-custom2">
+              {service.title}
+            </h2>
 
             {/* List of Services */}
             <ul className="mt-4 space-y-2 text-md text-white font-custom2">

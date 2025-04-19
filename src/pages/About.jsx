@@ -42,20 +42,19 @@ const About = () => {
 
   return (
     <div>
+      {/* ABOUT SECTION */}
       <section
         className="w-full min-h-screen bg-[#0f0d15] pt-40 px-0 md:px-16"
         style={{
           background: "radial-gradient(circle at top, #5598a6 0%, black 70%)",
         }}
       >
-       
-        <h1 className="font-custom1 text-white text-4xl md:text-6xl lg:text-7xl text-center mb-12">
+        <h1 className="font-custom1 text-white lg:text-6xl md:text-6xl text-2xl text-center mb-12">
           ABOUT US
         </h1>
 
-        
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
-          
+          {/* Text Section */}
           <div className="w-full md:w-[55%] font-custom2 text-white text-center md:text-left md:pl-6 px-6">
             <p className="text-lg md:text-xl leading-relaxed text-justify">
               Lens Vault Studios pushes the boundaries of traditional
@@ -67,21 +66,33 @@ const About = () => {
               impression—across every platform and screen. <br />
               Whether you're building a brand, launching a campaign, or telling
               your story, Lens Vault Studios is your creative partner in shaping
-              content that truly resonates.
+              content that truly resonates.
             </p>
           </div>
 
-          
-          <div className="w-full md:w-[40%] flex justify-center md:justify-end">
+          {/* Animated Image Section */}
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 50,
+              damping: 20,
+              duration: 1,
+            }}
+            viewport={{ once: true }}
+            className="w-full md:w-[40%] flex justify-center md:justify-end"
+          >
             <img
               src="/1.png"
               alt="Lens Vault Studios"
               className="h-[300px] md:h-[400px] lg:h-[400px] w-auto object-cover"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
+      {/* PEOPLE SECTION */}
       <section
         className="w-full min-h-screen bg-[#0f0d15] relative pt-10 md:pt-20 overflow-x-hidden"
         style={{
@@ -89,7 +100,7 @@ const About = () => {
             "radial-gradient(circle at bottom, #5598a6 0%, black 70%)",
         }}
       >
-        <h1 className="font-custom1 lg:text-7xl md:text-7xl text-4xl text-center text-white">
+        <h1 className="font-custom1 lg:text-6xl md:text-6xl text-2xl text-center text-white">
           People
         </h1>
 
@@ -101,18 +112,18 @@ const About = () => {
                 index % 2 !== 0 ? "md:flex-row-reverse" : ""
               }`}
               initial={{
-                x: index % 2 === 0 ? -200 : 200, // Start position based on side
+                x: index % 2 === 0 ? -200 : 200,
                 opacity: 0,
               }}
               whileInView={{
-                x: 0, // Move to center when in view
+                x: 0,
                 opacity: 1,
               }}
               transition={{
                 type: "spring",
                 stiffness: 50,
                 damping: 25,
-                duration: 1.5, // Duration of the animation
+                duration: 1.5,
               }}
               viewport={{ once: true }}
             >

@@ -37,7 +37,7 @@ const Home = () => {
           background: "radial-gradient(circle at top, #5598a6 0%, black 70%)",
         }}
       >
-        <h1 className="font-custom1 pt-40 lg:text-7xl md:text-7xl text-3xl text-center text-white">
+        <h1 className="font-custom1 pt-40 lg:text-6xl md:text-6xl text-2xl text-center text-white">
           OPENING THE VAULT
         </h1>
 
