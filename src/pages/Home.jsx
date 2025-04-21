@@ -1,36 +1,75 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const videoRef = useRef(null); // For desktop video
+  const mobileVideoRef = useRef(null); // For mobile video
+  const sectionRef = useRef(null); // Video section
+  const [isMuted, setIsMuted] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const isVisible = entry.isIntersecting;
+        setIsMuted(!isVisible);
+
+        if (videoRef.current) {
+          videoRef.current.muted = !isVisible;
+        }
+
+        if (mobileVideoRef.current) {
+          mobileVideoRef.current.muted = !isVisible;
+        }
+      },
+      {
+        threshold: 0.3, // Adjust as needed (30% in view triggers unmute)
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="relative w-full h-auto">
       {/* Full-Screen Video Section */}
-      <section className="relative w-full min-h-screen">
-        {/* Desktop Video (visible on md and up) */}
+      <section ref={sectionRef} className="relative w-full min-h-screen">
+        {/* Desktop Video */}
         <video
+          ref={videoRef}
           className="hidden md:block absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           autoPlay
           loop
-          muted
           playsInline
+          muted={isMuted} // dynamically control mute
         >
           <source src="/logo-animation.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
-        {/* Mobile Video*/}
+        {/* Mobile Video */}
         <video
+          ref={mobileVideoRef}
           className="block md:hidden absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           autoPlay
           loop
-          muted
           playsInline
+          muted={isMuted}
         >
           <source src="/home-mobile.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </section>
 
+      {/* Content Section */}
       <section
         className="w-full min-h-screen bg-[#0f0d15] relative"
         style={{
@@ -41,25 +80,21 @@ const Home = () => {
           OPENING THE VAULT
         </h1>
 
-        {/* Centered Image with Scroll Triggered Animation */}
         <div className="flex justify-center items-center pt-10 mt-6 mb-6">
           <motion.img
             src="/home.png"
             alt="Centered Image"
             className="w-180 h-auto"
             initial={{ scale: 0.6, opacity: 0 }}
-            whileInView={{
-              scale: 1,
-              opacity: 1,
-            }}
+            whileInView={{ scale: 1, opacity: 1 }}
             transition={{
               type: "spring",
-              stiffness: 100, // Slower movement
-              damping: 25, // Slower damping for a more gradual effect
-              duration: 2, // Make it slower
-              delay: 0.3, // Delay a bit before animation starts
+              stiffness: 100,
+              damping: 25,
+              duration: 2,
+              delay: 0.3,
             }}
-            viewport={{ once: true }} // This ensures it triggers once when it comes into view
+            viewport={{ once: true }}
           />
         </div>
 
