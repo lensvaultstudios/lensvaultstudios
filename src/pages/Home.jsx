@@ -1,55 +1,17 @@
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const Home = () => {
-  const videoRef = useRef(null); // For desktop video
-  const mobileVideoRef = useRef(null); // For mobile video
-  const sectionRef = useRef(null); // Video section
-  const [isMuted, setIsMuted] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        const isVisible = entry.isIntersecting;
-        setIsMuted(!isVisible);
-
-        if (videoRef.current) {
-          videoRef.current.muted = !isVisible;
-        }
-
-        if (mobileVideoRef.current) {
-          mobileVideoRef.current.muted = !isVisible;
-        }
-      },
-      {
-        threshold: 0.3, // Adjust as needed (30% in view triggers unmute)
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   return (
     <div className="relative w-full h-auto">
       {/* Full-Screen Video Section */}
-      <section ref={sectionRef} className="relative w-full min-h-screen">
+      <section className="relative w-full min-h-screen">
         {/* Desktop Video */}
         <video
-          ref={videoRef}
           className="hidden md:block absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           autoPlay
           loop
+          muted
           playsInline
-          muted={isMuted} // dynamically control mute
         >
           <source src="/logo-animation.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -57,12 +19,11 @@ const Home = () => {
 
         {/* Mobile Video */}
         <video
-          ref={mobileVideoRef}
           className="block md:hidden absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           autoPlay
           loop
+          muted
           playsInline
-          muted={isMuted}
         >
           <source src="/home-mobile.mp4" type="video/mp4" />
           Your browser does not support the video tag.

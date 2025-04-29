@@ -1,5 +1,5 @@
 // import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram, FaYoutube, FaEnvelope, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaLinkedin ,FaYoutube, FaEnvelope, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
@@ -53,6 +53,14 @@ const Footer = () => {
             className="text-white text-xl hover:text-blue-600 transition duration-300"
           >
             <FaFacebook />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/lens-vault-studios/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-xl hover:text-blue-400 transition duration-300"
+          >
+            <FaLinkedin />
           </a>
         </div>
       </div>
