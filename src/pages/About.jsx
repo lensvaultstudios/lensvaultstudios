@@ -12,7 +12,7 @@ const About = () => {
     },
     {
       name: "Danish Devgn",
-      designation: "CEO",
+      designation: "Founder/CEO",
       image: "/danish.jpg",
       description:
         "Danish Devgn is the CEO of Lens Vault Studios, a next-gen content creation company merging creativity with technology to redefine storytelling. With a background in filmmaking and production, he ensures each project resonates with audiences through innovative, immersive narratives. Under his leadership, the company pushes creative boundaries, crafting impactful stories that empower brands, creators, and businesses in the digital age.",
@@ -24,13 +24,13 @@ const About = () => {
       description:
         "Seasoned Professional and Entrepreneur with over 30 years of experience leading marketing, sales, and business functions across diverse industry verticals. Held key leadership roles in various companies, driving growth, innovation, and large-scale team leadership.",
     },
-    {
-      name: "Parag Desai",
-      designation: "Head Of Operations",
-      image: "/parag.jpg",
-      description:
-        "Parag Desai, Founder and CEO of Universal Communications, has been a leading force in film publicity and reputation management for over 30 years. His sharp industry insight and forward-thinking strategies have set new benchmarks, establishing Universal Communications as a powerhouse in entertainment marketing. Expanding his influence in the industry, he has also ventured into film production, bringing his expertise to the creative side of cinema. With a keen interest in the evolving landscape of content through LVS, he recognizes its vast potential in this dynamic space. Leveraging his extensive experience, he aims to shape and guide this new era of content consumption, ensuring diverse stories reach audiences in innovative and impactful ways.",
-    },
+    // {
+    //   name: "Parag Desai",
+    //   designation: "Head Of Operations",
+    //   image: "/parag.jpg",
+    //   description:
+    //     "Parag Desai, Founder and CEO of Universal Communications, has been a leading force in film publicity and reputation management for over 30 years. His sharp industry insight and forward-thinking strategies have set new benchmarks, establishing Universal Communications as a powerhouse in entertainment marketing. Expanding his influence in the industry, he has also ventured into film production, bringing his expertise to the creative side of cinema. With a keen interest in the evolving landscape of content through LVS, he recognizes its vast potential in this dynamic space. Leveraging his extensive experience, he aims to shape and guide this new era of content consumption, ensuring diverse stories reach audiences in innovative and impactful ways.",
+    // },
     {
       name: "Kisheta Paarth Dave",
       designation: "Project Manager",
