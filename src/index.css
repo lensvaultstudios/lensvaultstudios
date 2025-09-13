@@ -2,16 +2,18 @@
 
 @font-face {
   font-family: "CustomFont1";
-  src: url("/src/assets/fonts/Semakin.otf") format("opentype");
+  src: url("/fonts/Semakin.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "CustomFont2";
-  src: url("/src/assets/fonts/LeagueSpartan.ttf") format("opentype");
+  src: url("/fonts/LeagueSpartan.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 .font-custom1 {
@@ -21,8 +23,3 @@
 .font-custom2 {
   font-family: "CustomFont2", serif;
 }
-
-/* body {
-  font-family: 'Lato', sans-serif;
-} */
-
