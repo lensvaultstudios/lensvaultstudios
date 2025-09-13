@@ -12,6 +12,8 @@ const Home = () => {
           loop
           muted
           playsInline
+          preload="auto"
+          loading="lazy"
         >
           <source src="/logo-animation.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -19,11 +21,13 @@ const Home = () => {
 
         {/* Mobile Video */}
         <video
-          className="block md:hidden absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+          className="block md:hidden absolute top-0 left-0 w-full h-full object-cover z-[-1] bg-black"
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
+          loading="lazy"
         >
           <source src="/home-mobile.mp4" type="video/mp4" />
           Your browser does not support the video tag.
